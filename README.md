@@ -1,6 +1,7 @@
 ## Sumario
 
-$$ tentsline {section}{\numberline {1}Variaveis}{3}{section.1}
+$$ 
+tentsline {section}{\numberline {1}Variaveis}{3}{section.1}
 
  tentsline {section}{\numberline {2}Coerção}{3}{section.2}
 
