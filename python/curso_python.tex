@@ -4,7 +4,7 @@
 textwidth=150mm,textheight=210mm,
 top=30mm,bottom=30mm,
 left=30mm,right=30mm}
-\date{} % Remove a exibição da data
+\date{} % Remove a exibiçao da data
 \usepackage{xcolor}
 \usepackage{listings}
 \usepackage{hyperref} % Para criar links
@@ -36,90 +36,183 @@ left=30mm,right=30mm}
 \newpage
 
 \section{Variaveis}
-Python = Linguagem programação\\
-tipo de tipagem = Dinamica/Forte\\
-str $->$ string $->$ texto\\
-Strings são textos que estão dentro das aspas
-\section{Coerção}
-conversão de tipos , coerção
-type convertion, typecasting, coercion
-é o ato de converter um tipo em outro
-tipos imutaveis e primitivos
-str, int , float, bool 
+Ao contrário de linguagens como C ou Java, Python se destaca por sua tipagem dinâmica, um dos seus principais pontos fortes. Isso significa que nao é necessário definir o tipo de uma variável no momento de sua criaçao, o que facilita a escrita de código, mas também pode levar a erros em tempo de execuçao. Além disso, por ser uma linguagem multiparadigma, Python permite a criaçao de tipos de variáveis personalizados, oferecendo suporte à programaçao orientada a objetos.
 
-\begin{lstlisting}
-  # conversao de tipos, coercao
-# type convertion, typecasting, coercion
-# e o ato de converter um tipo em outro
-#  tipos imutaveis e primitivos:
-# str, int, float, bool
-print(int('1'), type(int('1')))
-print(type(float('1') + 1))
-print(bool(' '))
-print(str(11) + 'b')
+\textbf{Os tipos nativos do Python sao:} \begin{itemize} \item \textbf{Inteiros (int)}: Suportam operações aritméticas comuns, como adiçao, subtraçao, multiplicaçao, entre outras. \item \textbf{Ponto flutuante (float)}: Representam números reais e também suportam operações aritméticas. \item \textbf{Strings (str)}: Sequências de caracteres, que permitem operações como concatenaçao, fatiamento, entre outras. \item \textbf{Listas (list)}: Coleções ordenadas e mutáveis, que permitem adiçao, remoçao e acesso por índice. \item \textbf{Tuplas (tuple)}: Semelhantes às listas, mas imutáveis. \item \textbf{Dicionários (dict)}: Coleções de pares chave-valor, que permitem acesso, adiçao e remoçao de elementos por chave. \end{itemize}
 
+\subsection{strings}
+As strings em Python sao um dos tipos de variáveis mais utilizados, e a linguagem oferece amplo suporte para seu manuseio.
+Os dados textuais em Python sao tratados com objetos str, ou strings. Strings sao sequências imutáveis de pontos de código Unicode. As strings literais sao escritas de diversas maneiras:
 
+Aspas simples: 'permitem aspas "duplas" internas'
+
+Aspas duplas: "permitem aspas 'simples' internas"
+
+Aspas triplas: '''Três aspas simples''', """Três aspas duplas"""
+
+Strings de aspas triplas podem expandir por várias linhas – todos os espaços em branco associados serao incluídos em literal string.
+
+Os literais strings que fazem parte de uma única expressao e têm apenas espaços em branco entre eles serao implicitamente convertidos em um único literal string. Isso é, ("spam " "eggs") == "spam eggs".
+
+Veja Literais de string e bytes para mais informações sobre as várias formas de literal de string, incluindo o suporte a sequêncis de escape, e o prefixo r (“raw”) que desabilita a maioria dos processos de sequência de escape.
+
+As strings também podem ser criadas a partir de outros objetos usando o construtor str.
+
+Uma vez que nao há nenhum tipo de “caractere” separador, indexar uma string produz strings de comprimento 1. Ou seja, para uma string nao vazia s, s[0] == s[0:1].
+
+Também nao existe um tipo string mutável, mas o método str.join() ou a classe io.StringIO podem ser usados para construir strings de forma eficiente a partir de vários partes distintas.
+\subsection{metodos usuais}
+As constantes definidas neste módulo sao:
+
+string.asciiletters
+A concatenaçao das constantes asciilowercase e asciiuppercase descritas abaixo. Este valor nao depende da localidade.
+
+string.asciilowercase
+As letras minúsculas 'abcdefghijklmnopqrstuvwxyz'. Este valor nao depende da localidade e nao mudará.
+
+string.asciiuppercase
+As letras maiúsculas 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'. Este valor nao depende da localidade e nao mudará.
+
+string.digits
+A string '0123456789'.
+
+string.hexdigits
+A string '0123456789abcdefABCDEF'.
+
+string.octdigits
+A string '01234567'.
+
+string.punctuation
+String de caracteres ASCII que sao considerados caracteres de pontuaçao na localidade C: !"\#\$%&'()*+,-./:;<=>?@[\]^`{|}~.
+
+string.printable
+String de caracteres ASCII que sao considerados imprimíveis. Esta é uma combinaçao de digits, asciiletters, punctuation e whitespace.
+
+string.whitespace
+Uma string contendo todos os caracteres ASCII que sao considerados espaços em branco. Isso inclui espaço de caracteres, tabulaçao, avanço de linha, retorno, avanço de formulário e tabulaçao vertical.
+\href{https://docs.python.org/pt-br/3/library/string.html}{site documetaçao}.
+\section{Coerçao}
+
+A coerçao, ou conversao de tipos (\emph{type conversion}, \emph{typecasting}), é o processo de converter um tipo de dado em outro. Esse processo pode ocorrer entre tipos imutáveis e primitivos, como \texttt{str}, \texttt{int}, \texttt{float} e \texttt{bool}.
+
+Exemplo de coerção em Python:
+
+\begin{lstlisting}[language=Python]
+# Conversao de tipos (coercao)
+# type conversion, typecasting, coercion
+# O ato de converter um tipo em outro
+# Tipos imutaveis e primitivos: str, int, float, bool
+
+print(int('1'), type(int('1')))  # Converte a string '1' para inteiro
+print(type(float('1') + 1))      # Converte a string '1' para float e soma 1
+print(bool(' '))                 # Converte uma string nao vazia para booleano (True)
+print(str(11) + 'b')             # Converte o numero 11 para string e concatena 'b'
 \end{lstlisting}
+
 \section{Separador}
-nesse trecho de codigo  sep indica que os numeros inteiros seram separados
-por - e ao final e o end barra n indica que havera uma quebra de linha
-\begin{lstlisting}
-print(12, 34, 1011, sep= "-", end='\n##')
-print(9, 10, sep= "-", end= '\n')
-print(56, 78, sep= '-', end='\n')
-\end{lstlisting}
-\section{F-strings}
-consigo inserir dentro de uma string as variaveis dentro do codigo
-\begin{lstlisting}
-  nome = 'Luiz Otavio'
-  altura = 1.80
-  peso = 95
-  imc = peso / altura ** 2
-  
-  "f-strings"
-  linha_1 = f'{nome} tem {altura:.2f} de altura,'
-  linha_2 = f'pesa {peso} quilos e seu imc e'
-  linha_3 = f'{imc:.2f}'
-  
-  print(linha_1)
-  print(linha_2)
-  print(linha_3)
-  
-  # Luiz Otavio tem 1.80 de altura,
-  # pesa 95 quilos e seu IMC e
-  # 29.320987654320987
-\end{lstlisting}  
-\section{Formatacao strings usando format}  
-setando a quantidade de casas apos a virgula
-\begin{lstlisting}
-  a = 'AAAAA'
-  b = 'BBBBBB'
-  c = 1.1
-  string = 'b={nome2} a={nome1} a={nome1} c={nome3:.2f}'
-  formato = string.format(nome1=a, nome2=b, nome3=c)
-  print(formato)
+No Python, a função \texttt{print()} permite personalizar a forma como os valores são impressos na tela. Entre os parâmetros dessa função, \texttt{sep} e \texttt{end} desempenham papéis importantes no controle do formato da saída. O parâmetro \texttt{sep} especifica o separador a ser utilizado entre os itens que são passados para a função \texttt{print()}, enquanto o parâmetro \texttt{end} define o que será impresso no final da linha. Essas opções permitem uma maior flexibilidade na exibição de dados, facilitando a formatação de resultados conforme a necessidade do usuário.
 
+Por exemplo, podemos usar \texttt{sep} para separar números ou palavras com caracteres personalizados, como hífens ou espaços, e o \texttt{end} para controlar se haverá ou não uma quebra de linha, ou adicionar texto adicional no final da linha. A seguir, mostramos alguns exemplos de como esses parâmetros podem ser utilizados.
+No trecho de código a seguir, o parâmetro \texttt{sep} define o separador entre os números inteiros. Neste caso, os números serão separados por um hífen (\texttt{-}). Já o parâmetro \texttt{end} define o que será impresso no final de cada linha. No exemplo, após a impressão dos números, haverá uma quebra de linha seguida de \texttt{\#\#}.
+
+Exemplo de código:
+
+\begin{lstlisting}[language=Python]
+# O parametro 'sep' separa os numeros por '-'
+# O parametro 'end' determina o que sera impresso no final de cada linha
+
+print(12, 34, 1011, sep="-", end='\n##')  # Numeros separados por '-' e quebra de linha com '##'
+print(9, 10, sep="-", end='\n')          # Numeros separados por '-' e quebra de linha
+print(56, 78, sep='-', end='\n')         # Numeros separados por '-' e quebra de linha
 \end{lstlisting}
+
+\section{F-strings}
+
+As \texttt{f-strings} (ou \texttt{formatted string literals}) são uma maneira eficiente e legível de inserir variáveis diretamente dentro de strings no Python. Com elas, podemos incorporar valores de variáveis ou expressões dentro de strings, utilizando uma sintaxe simples e clara. Para usar uma \texttt{f-string}, basta colocar um \texttt{f} antes da string e, dentro das chaves (\texttt{\{ \}}), colocar o nome da variável ou a expressão que desejamos interpolar.
+
+No exemplo a seguir, vemos o uso de \texttt{f-strings} para inserir variáveis dentro de uma string formatada. O código calcula o IMC de uma pessoa e o exibe com precisão específica:
+
+\begin{lstlisting}[language=Python]
+# Definicao das variaveis
+nome = 'Luiz Otavio'  # Nome da pessoa
+altura = 1.80         # Altura da pessoa em metros
+peso = 95             # Peso da pessoa em quilos
+imc = peso / altura ** 2  # Calculo do Indice de Massa Corporal (IMC)
+
+# Utilizacao das f-strings para formatacao de strings
+linha1 = f'{nome} tem {altura:.2f} de altura,'  # A altura e formatada com 2 casas decimais
+linha2 = f'pesa {peso} quilos e seu imc e'      # Exibe o peso diretamente
+linha3 = f'{imc:.2f}'                           # O IMC e formatado com 2 casas decimais
+
+# Impressao das linhas
+print(linha1)
+print(linha2)
+print(linha3)
+
+# Saida esperada:
+# Luiz Otavio tem 1.80 de altura,
+# pesa 95 quilos e seu IMC e
+# 29.32
+\end{lstlisting}
+
+No código acima:
+- As variáveis \texttt{nome}, \texttt{altura}, \texttt{peso} e \texttt{imc} são inseridas nas strings através da sintaxe \texttt{f'{variavel}'}, com a possibilidade de aplicar formatação nas variáveis, como \texttt{:.2f} para exibir números flutuantes com 2 casas decimais.
+- O método \texttt{f'{variavel:.2f}'} é usado para formatar a variável \texttt{altura} e \texttt{imc}, garantindo que os valores sejam apresentados com duas casas decimais.
+
+As \texttt{f-strings} são muito mais rápidas e legíveis em comparação com métodos mais antigos de formatação de strings, como o uso de \texttt{str.format()} ou o operador de percentagem \texttt{\%}.
+\section{Formatação de Strings Usando \texttt{format}}
+
+O método \texttt{format()} permite a formatação de strings de maneira flexível, possibilitando a inserção de variáveis ou valores dentro de uma string. Uma das vantagens desse método é a capacidade de definir a quantidade de casas decimais ou o formato específico para números de ponto flutuante, entre outras opções.
+
+No exemplo a seguir, usamos o \texttt{format()} para formatar uma string que inclui variáveis e um número de ponto flutuante com duas casas decimais:
+
+\begin{lstlisting}[language=Python]
+# Definição das variáveis
+a = 'AAAAA'  # Uma string
+b = 'BBBBBB'  # Outra string
+c = 1.1      # Um número flutuante
+
+# Criando a string com espaços reservados para as variáveis
+# A variável c será formatada com 2 casas decimais
+string = 'b={nome2} a={nome1} a={nome1} c={nome3:.2f}'
+
+# Usando o método format() para substituir os espaços reservados
+formato = string.format(nome1=a, nome2=b, nome3=c)
+
+# Exibindo o resultado formatado
+print(formato)
+
+# Saída esperada:
+# b=BBBBBB a=AAAAA a=AAAAA c=1.10
+\end{lstlisting}
+
+No código acima:
+- A string \texttt{string} contém espaços reservados, identificados por \texttt{{nome1}}, \texttt{{nome2}} e \texttt{{nome3}}.
+- O método \texttt{format()} é usado para substituir esses espaços reservados pelos valores das variáveis \texttt{nome1}, \texttt{nome2} e \texttt{nome3}.
+- A variável \texttt{c} (que é um número flutuante) é formatada para exibir apenas duas casas decimais utilizando a sintaxe \texttt{{nome3:.2f}}.
+
+Esse método é bastante útil quando queremos controlar a aparência de valores numéricos, como exibir números com um número específico de casas decimais, ou quando precisamos formatar variáveis de maneira mais dinâmica.
+
 \section{Operadores logicos}
-obs: print sempre avalia true por exemplo print (nome and idade) se não houver nada nas duas variaveis 
-a expressão retornar false, se houvera expressão retorna false
-and (e) or (ou) not (não)\\
+obs: print sempre avalia true por exemplo print (nome and idade) se nao houver nada nas duas variaveis 
+a expressao retornar false, se houvera expressao retorna false
+and (e) or (ou) not (nao)\\
  and - Todas as condições precisam ser
  verdadeiras.
  Se qualquer valor for considerado falso,
- a expressão inteira será avaliada naquele valor
- São considerados falsy (que vc já viu)
+ a expressao inteira será avaliada naquele valor
+ Sao considerados falsy (que vc já viu)
  0 0.0 '' False
  Também existe o tipo None que é
- usado para representar um não valor\\
+ usado para representar um nao valor\\
   \subsection{exemplo and}
   \begin{lstlisting}
   entrada = input('[E]ntrar [S]air: ')
-  senha_digitada = input('Senha: ')
+  senhadigitada = input('Senha: ')
 
-  senha_permitida = '123456'
+  senhapermitida = '123456'
 
-  if entrada == 'E' and senha_digitada == senha_permitida:
+  if entrada == 'E' and senhadigitada == senhapermitida:
       print('Entrar')
   else:
       print('Sair')
@@ -128,14 +221,14 @@ and (e) or (ou) not (não)\\
   print(True and 0 and True)
   \end{lstlisting}
   \subsection{exemplo or}
-  esse exemplo serve para verificar senha ou se não há senha
+  esse exemplo serve para verificar senha ou se nao há senha
   \begin{lstlisting}
   # entrada = input('[E]ntrar [S]air: ')
-  # senha_digitada = input('Senha: ')
+  # senhadigitada = input('Senha: ')
 
-  # senha_permitida = '123456'
+  # senhapermitida = '123456'
 
-  # if (entrada == 'E' or entrada == 'e') and senha_digitada == senha_permitida:
+  # if (entrada == 'E' or entrada == 'e') and senhadigitada == senhapermitida:
   #     print('Entrar')
   # else:
   #     print('Sair')
@@ -193,8 +286,8 @@ else:
     divisao = 10 / 3  # float
     print('Divisao', divisao)
     
-    divisao_inteira = 10 // 3
-    print('Divisao inteira', divisao_inteira)
+    divisaointeira = 10 // 3
+    print('Divisao inteira', divisaointeira)
     
     exponenciacao = 2 ** 10
     print('Exponenciacao', exponenciacao)
@@ -208,7 +301,7 @@ else:
     print(15 % 2 == 0)
     print(16 % 2 == 0)
   \end{lstlisting}
-\section{interpolação de string com porcentagem em python}
+\section{interpolaçao de string com porcentagem em python}
 \begin{lstlisting}
   """
 s - string
@@ -224,7 +317,7 @@ print(variavel)
 print('O hexadecimal de %d e %08X' % (1500, 1500))
 
 \end{lstlisting}
-\section{Formatção de strings com F-strings}
+\section{Formatçao de strings com F-strings}
 \begin{lstlisting}
   """
   s - string
@@ -269,26 +362,26 @@ print(variavel[::-1])
 #obs: o numero de passos pode ser maior que um  
 print(variavel[-1:-10:-1])
 \end{lstlisting}  
-\section{Introdução a Try e Except}
+\section{Introduçao a Try e Except}
 \begin{lstlisting}
   """
 try -> tentar executar o codigo
 except -> ocorreu algum erro ao tentar executar
 """
-numero_str = input(
+numerostr = input(
     'Vou dobrar o numero que vc digitar: '
 )
 
 try:
-    numero_float = float(numero_str)
-    print('FLOAT:', numero_float)
-    print(f'O dobro de {numero_str} e {numero_float * 2:.2f}')
+    numerofloat = float(numerostr)
+    print('FLOAT:', numerofloat)
+    print(f'O dobro de {numerostr} e {numerofloat * 2:.2f}')
 except:
     print('Isso nao e um numero')
 
-# if numero_str.isdigit():
-#     numero_float = float(numero_str)
-#     print(f'O dobro de {numero_str} e {numero_float * 2:.2f}')
+# if numerostr.isdigit():
+#     numerofloat = float(numerostr)
+#     print(f'O dobro de {numerostr} e {numerofloat * 2:.2f}')
 # else:
 #     print('Isso nao e um numero')
 \end{lstlisting}
@@ -313,22 +406,22 @@ is e is not = e ou nao e (tipo, valor, identidade)
 id = Identidade
 """
 condicao = False
-passou_no_if = None
+passounoif = None
 
 if condicao:
-    passou_no_if = True
+    passounoif = True
     print('Faca algo')
 else:
     print('Nao faca algo')
 
 
-if passou_no_if is None:
+if passounoif is None:
     print('Nao passou no if')
 else:
     print('Passou no if')
   
 \end{lstlisting}
-\section{Tipos built-in, tipos imutaveis, metodos de strings, documentação}
+\section{Tipos built-in, tipos imutaveis, metodos de strings, documentaçao}
 \begin{lstlisting}
   """
 https://docs.python.org/pt-br/3/library/stdtypes.html
@@ -337,9 +430,9 @@ Imutaveis que vimos: str, int, float, bool
 Tipos Built-in = tipos imbutidos
 Tipos imutaveis =  nao podem acontecer mudancas no tipo
 string = '1000'
-# outra_variavel = f'{string[:3]}ABC{string[4:]}'
+# outravariavel = f'{string[:3]}ABC{string[4:]}'
 # print(string)
-# print(outra_variavel)
+# print(outravariavel)
 print(string.zfill(10))
   
 \end{lstlisting}
@@ -361,7 +454,7 @@ print(string.zfill(10))
           break
   print('Acabou')
   \end{lstlisting}
-\section{operadores de atribuição com operadores aritmeticos}
+\section{operadores de atribuiçao com operadores aritmeticos}
   \begin{lstlisting}
     """
     Operadores de atribuicao
@@ -411,13 +504,13 @@ print(string.zfill(10))
     Executa uma acao enquanto uma condicao for verdadeira
     Loop infinito -> Quando um codigo nao tem fim
     """
-    qtd_linhas = 5
-    qtd_colunas = 5
+    qtdlinhas = 5
+    qtdcolunas = 5
     
     linha = 1
-    while linha <= qtd_linhas:
+    while linha <= qtdlinhas:
         coluna = 1
-        while coluna <= qtd_colunas:
+        while coluna <= qtdcolunas:
             print(f'{linha=} {coluna=}')
             coluna += 1
         linha += 1
@@ -426,7 +519,7 @@ print(string.zfill(10))
     print('Acabou') 
   \end{lstlisting}
 \section{while-else}
-o else é sempre executado apos o while, porém se houver um break, o else não é executado
+o else é sempre executado apos o while, porém se houver um break, o else nao é executado
 \begin{lstlisting}
   """ while/else """
 string = 'Valor qualquer'
@@ -446,12 +539,12 @@ print('Fora do while.')
 \end{lstlisting}
 \section{for-in}
 \begin{lstlisting}
-  # senha_salva = '123456'
-# senha_digitada = ''
+  # senhasalva = '123456'
+# senhadigitada = ''
 # repeticoes = 0
 
-# while senha_salva != senha_digitada:
-#     senha_digitada = input(f'Sua senha ({repeticoes}x): ')
+# while senhasalva != senhadigitada:
+#     senhadigitada = input(f'Sua senha ({repeticoes}x): ')
 
 #     repeticoes += 1
 
@@ -459,11 +552,11 @@ print('Fora do while.')
 # print('Aquele laco acima pode ter repeticoes infinitas')
 texto = 'Python'
 
-novo_texto = ''
+novotexto = ''
 for letra in texto:
-    novo_texto += f'*{letra}'
+    novotexto += f'*{letra}'
     print(letra)
-print(novo_texto + '*')
+print(novotexto + '*')
 \end{lstlisting}
 \section{for + range}
 \begin{lstlisting}
@@ -479,7 +572,7 @@ for numero in numeros:
 \section{for por baixo dos panos}
 \begin{lstlisting}
   """
-Iteravel -> str, range, etc (__iter__)
+Iteravel -> str, range, etc (iter)
 Iterador -> quem sabe entregar um valor por vez
 next -> me entregue o proximo valor
 iter -> me entregue seu iterador
@@ -549,8 +642,8 @@ print(lista[2], type(lista[2]))
   lista.pop()
   lista.append(60)
   lista.append(70)
-  ultimo_valor = lista.pop(3)
-  print(lista, 'Removido,', ultimo_valor)
+  ultimovalor = lista.pop(3)
+  print(lista, 'Removido,', ultimovalor)
 #metodos pop, append, insert  
   lista = [10, 20, 30, 40]
 lista.append('Luiz')
@@ -561,12 +654,12 @@ del lista[-1]
 lista.insert(100, 5)
 print(lista[4]) 
 #metodos concatenar e extender Listas
-lista_a = [1, 2, 3]
-lista_b = [4, 5, 6]
-lista_c = lista_a + lista_b
+listaa = [1, 2, 3]
+listab = [4, 5, 6]
+listac = listaa + listab
 #o metodo extend extende a lista a para a lista b
-lista_a.extend(lista_b)
-print(lista_a)
+listaa.extend(listab)
+print(listaa)
 \end{lstlisting}
 \textbf{cuidados com os tipos mutaveis}
 \begin{lstlisting}
@@ -575,16 +668,16 @@ Cuidados com dados mutaveis
 = - copiado o valor (imutaveis)
 = - aponta para o mesmo valor na memoria (mutavel)
 """
-lista_a = ['Luiz', 'Maria', 1, True, 1.2]
-lista_b = lista_a.copy()
-lista_b = lista_a #acontece q aqui lista_b aponta para lista_a 
-lista_a[0] = 'Qualquer coisa'
-print(lista_a)
-print(lista_b)
+listaa = ['Luiz', 'Maria', 1, True, 1.2]
+listab = listaa.copy()
+listab = listaa #acontece q aqui listab aponta para listaa 
+listaa[0] = 'Qualquer coisa'
+print(listaa)
+print(listab)
 \end{lstlisting}
-\section{introdução aon desempacotamento e tuplas}
+\section{introduçao aon desempacotamento e tuplas}
 \begin{lstlisting}
-_, _, nome, *resto = ['Maria', 'Helena', 'Luiz']
+, , nome, *resto = ['Maria', 'Helena', 'Luiz']
 print(nome)
 \end{lstlisting}
 \subsection{tuplas}
@@ -615,9 +708,9 @@ print(nomes)
   #     print(indice, nome)
   
   
-  # for tupla_enumerada in enumerate(lista):
+  # for tuplaenumerada in enumerate(lista):
   #     print('FOR da tupla:')
-  #     for valor in tupla_enumerada:
+  #     for valor in tuplaenumerada:
   #         print(f'\t{valor}')
 \end{lstlisting}
 \section{imprecisao do numeros de pontos flutuante e decimal}
@@ -625,17 +718,17 @@ print(nomes)
   """
 Imprecisao de ponto flutuante
 Double-precision floating-point format IEEE 754
-https://en.wikipedia.org/wiki/Double-precision_floating-point_format
+https://en.wikipedia.org/wiki/Double-precisionfloating-pointformat
 https://docs.python.org/pt-br/3/tutorial/floatingpoint.html
 """
 import decimal
 
-numero_1 = decimal.Decimal('0.1')
-numero_2 = decimal.Decimal('0.7')
-numero_3 = numero_1 + numero_2
-print(numero_3)
-print(f'{numero_3:.2f}')
-print(round(numero_3, 2))
+numero1 = decimal.Decimal('0.1')
+numero2 = decimal.Decimal('0.7')
+numero3 = numero1 + numero2
+print(numero3)
+print(f'{numero3:.2f}')
+print(round(numero3, 2))
   
 \end{lstlisting}
 \section{split e join}
@@ -650,16 +743,16 @@ lstrip - corta os espacos da Esquerda
 """
 frase = '   Olha so que   , coisa interessante          '
 # O ',' e o caracter de divisao.
-lista_frases_cruas = frase.split(',')
+listafrasescruas = frase.split(',')
 
-lista_frases = []
-for i, frase in enumerate(lista_frases_cruas):
-    lista_frases.append(lista_frases_cruas[i].strip())
+listafrases = []
+for i, frase in enumerate(listafrasescruas):
+    listafrases.append(listafrasescruas[i].strip())
 
-# print(lista_frases_cruas)
-# print(lista_frases)
-frases_unidas = ', '.join(lista_frases)
-print(frases_unidas)
+# print(listafrasescruas)
+# print(listafrases)
+frasesunidas = ', '.join(listafrases)
+print(frasesunidas)
 \end{lstlisting}
 \section{Listas dentro de listas}
 \begin {lstlisting}
@@ -724,7 +817,7 @@ salas = [
     # 0       1       2
     ['Luiz', 'Joao', 'Eduarda', ],  # 2
 ]
-# p, b, *_, ap, u = lista
+# p, b, *, ap, u = lista
 # print(p, u, ap)
 # print('Maria', 'Helena', 1, 2, 3, 'Eduarda')
 # print(*lista)
@@ -742,9 +835,9 @@ Operacao ternaria (condicional de uma linha)
 # variavel = 'Valor' if condicao else 'Outro valor'
 # print(variavel)
 # digito = 9  # > 9 = 0
-# novo_digito = digito if digito <= 9 else 0
-# novo_digito = 0 if digito > 9 else digito
-# print(novo_digito)
+# novodigito = digito if digito <= 9 else 0
+# novodigito = 0 if digito > 9 else digito
+# print(novodigito)
 print('Valor' if False else 'Outro valor' if False else 'Fim')
 \end{lstlisting}
 \end{document}
